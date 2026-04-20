@@ -28,8 +28,8 @@ def load_data():
     fg = fg[["date", "value", "classification"]]
     fg.columns = ["date", "FG_value", "Sentiment"]
 
-    # --- File 2: Trade history ---
-    tr = pd.read_csv("historical_data.csv")
+    # --- File 2: Trade history (gzipped to fit on GitHub — pandas handles it automatically) ---
+    tr = pd.read_csv("historical_data.csv.gz", compression="gzip")
     tr["Timestamp IST"] = pd.to_datetime(tr["Timestamp IST"],
                                          format="%d-%m-%Y %H:%M",
                                          errors="coerce")

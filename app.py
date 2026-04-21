@@ -312,7 +312,7 @@ elif page == "Linear Regression":
     st.title("Linear Regression — Who profits from which mood?")
 
     fits, compare = fit_all_models(df)
-    lm6 = fits["M6: FG * Side + Size + Price  ⭐"]
+    lm6 = fits["M6: FG * Side + Size + Price"]
 
     st.markdown("### Model comparison (lower AIC = better)")
     st.dataframe(compare, use_container_width=True)

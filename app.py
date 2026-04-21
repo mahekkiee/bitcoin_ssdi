@@ -132,12 +132,12 @@ st.sidebar.title(" Navigation")
 page = st.sidebar.radio(
     "Go to",
     [
-        " Overview",
-        " Exploratory Analysis",
-        " VIF — Feature Selection",
-        " Linear Regression",
-        " Hypothesis Testing",
-        " Final Verdict",
+        "Overview",
+        "Exploratory Analysis",
+        "VIF — Feature Selection",
+        "Linear Regression",
+        "Hypothesis Testing",
+        "Final Verdict",
     ],
 )
 

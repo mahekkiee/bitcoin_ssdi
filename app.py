@@ -121,23 +121,23 @@ def fit_all_models(df):
 try:
     df = load_data()
 except FileNotFoundError as e:
-    st.error(f"❌ {e}")
+    st.error(f" {e}")
     st.stop()
 
 
 # ---------------------------------------------------------------
 # Sidebar navigation
 # ---------------------------------------------------------------
-st.sidebar.title("📊 Navigation")
+st.sidebar.title(" Navigation")
 page = st.sidebar.radio(
     "Go to",
     [
-        "🏠 Overview",
-        "🔍 Exploratory Analysis",
-        "🧹 VIF — Feature Selection",
-        "📉 Linear Regression",
-        "🧪 Hypothesis Testing",
-        "📝 Final Verdict",
+        " Overview",
+        " Exploratory Analysis",
+        " VIF — Feature Selection",
+        " Linear Regression",
+        " Hypothesis Testing",
+        " Final Verdict",
     ],
 )
 
@@ -152,8 +152,8 @@ st.sidebar.caption(
 # ===============================================================
 # 1. OVERVIEW
 # ===============================================================
-if page == "🏠 Overview":
-    st.title("📉 Buffett Effect in Crypto Trading")
+if page == "Overview":
+    st.title("Sentiment Effect in Crypto Trading")
     st.caption('"Be fearful when others are greedy, and greedy when others are fearful." '
                "— testing the statement on 210k real trades.")
 
@@ -162,7 +162,8 @@ if page == "🏠 Overview":
     c2.metric("Trading days", f"{df['date'].nunique():,}")
     c3.metric("Unique coins", df["Coin"].nunique())
     c4.metric("Date range",
-              f"{df['date'].min().date()} → {df['date'].max().date()}")
+              f"{df['date'].min().date()} 
+              → {df['date'].max().date()}")
 
     st.markdown("### Project summary")
     st.markdown(

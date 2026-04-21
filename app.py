@@ -197,8 +197,8 @@ if page == "Overview":
 # ===============================================================
 # 2. EXPLORATORY ANALYSIS
 # ===============================================================
-elif page == "🔍 Exploratory Analysis":
-    st.title("🔍 Exploratory Data Analysis")
+elif page == "Exploratory Analysis":
+    st.title("Exploratory Data Analysis")
 
     st.markdown("### Average PnL by sentiment, split by side")
     eda = (df.groupby(["Sentiment", "Side"])["Closed_PnL"]
@@ -246,8 +246,8 @@ elif page == "🔍 Exploratory Analysis":
 # ===============================================================
 # 3. VIF — FEATURE SELECTION
 # ===============================================================
-elif page == "🧹 VIF — Feature Selection":
-    st.title("🧹 VIF — Feature Selection")
+elif page == "VIF — Feature Selection":
+    st.title("VIF — Feature Selection")
 
     st.markdown(
         """
@@ -308,8 +308,8 @@ elif page == "🧹 VIF — Feature Selection":
 # ===============================================================
 # 4. LINEAR REGRESSION
 # ===============================================================
-elif page == "📉 Linear Regression":
-    st.title("📉 Linear Regression — Who profits from which mood?")
+elif page == "Linear Regression":
+    st.title("Linear Regression — Who profits from which mood?")
 
     fits, compare = fit_all_models(df)
     lm6 = fits["M6: FG * Side + Size + Price  ⭐"]
@@ -375,8 +375,8 @@ elif page == "📉 Linear Regression":
 # ===============================================================
 # 5. HYPOTHESIS TESTING
 # ===============================================================
-elif page == "🧪 Hypothesis Testing":
-    st.title("🧪 Hypothesis Testing")
+elif page == "Hypothesis Testing":
+    st.title("Hypothesis Testing")
     st.markdown(
         "Regression gave us coefficients. Hypothesis testing gives us "
         "formal **yes/no** answers. For each claim: state H₀ and H₁, "
@@ -506,8 +506,8 @@ elif page == "🧪 Hypothesis Testing":
 # ===============================================================
 # 6. FINAL VERDICT
 # ===============================================================
-elif page == "📝 Final Verdict":
-    st.title("📝 Final Verdict")
+elif page == "Final Verdict":
+    st.title("Final Verdict")
 
     fits, _ = fit_all_models(df)
     lm6 = fits["M6: FG * Side + Size + Price  ⭐"]

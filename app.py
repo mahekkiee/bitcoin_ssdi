@@ -100,7 +100,7 @@ def fit_all_models(df):
         "M3: FG + Size":                         "Closed_PnL ~ FG_value + Size_USD",
         "M4: FG + Size + Side":                  "Closed_PnL ~ FG_value + Size_USD + Side",
         "M5: FG + Size + Side + Price":          "Closed_PnL ~ FG_value + Size_USD + Side + Price",
-        "M6: FG * Side + Size + Price  ⭐":      "Closed_PnL ~ FG_value * Side + Size_USD + Price",
+        "M6: FG * Side + Size + Price  ":      "Closed_PnL ~ FG_value * Side + Size_USD + Price",
         "M7: FG + FG² + Side + Size":            "Closed_PnL ~ FG_value + FG_sq + Side + Size_USD",
     }
     fits = {name: smf.ols(spec, data=df).fit() for name, spec in specs.items()}
@@ -162,8 +162,7 @@ if page == "Overview":
     c2.metric("Trading days", f"{df['date'].nunique():,}")
     c3.metric("Unique coins", df["Coin"].nunique())
     c4.metric("Date range",
-              f"{df['date'].min().date()} 
-              → {df['date'].max().date()}")
+              f"{df['date'].min().date()} → {df['date'].max().date()}")
 
     st.markdown("### Project summary")
     st.markdown(

@@ -426,19 +426,6 @@ elif page == "Linear Regression":
     })
     st.dataframe(coef_df, use_container_width=True)
 
-    # --- Prominent p-value metrics -----------------
-    st.markdown("### Key p-values at a glance")
-    pc1, pc2, pc3 = st.columns(3)
-    pc1.metric("p(FG_value)",
-               f"{lm6.pvalues['FG_value']:.2e}",
-               "Reject H0" if lm6.pvalues['FG_value'] < 0.05 else "Keep H0")
-    pc2.metric("p(FG x Side)",
-               f"{lm6.pvalues['FG_value:Side[T.SELL]']:.2e}",
-               "Reject H0" if lm6.pvalues['FG_value:Side[T.SELL]'] < 0.05 else "Keep H0")
-    pc3.metric("p(Side[SELL])",
-               f"{lm6.pvalues['Side[T.SELL]']:.2e}",
-               "Reject H0" if lm6.pvalues['Side[T.SELL]'] < 0.05 else "Keep H0")
-
     # --- Slope metrics -----------------
     b_buy  = lm6.params["FG_value"]
     b_diff = lm6.params["FG_value:Side[T.SELL]"]

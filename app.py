@@ -415,25 +415,16 @@ elif page == "Linear Regression":
         "the only model that lets buyers and sellers have different slopes."
     )
 
-    # --- Coefficient table with significance stars -----------------
+    # --- Coefficient table with p-values -----------------
     st.markdown("### Model 6 - coefficient table with p-values")
-
-    def sig_stars(p):
-        if p < 0.001: return "***"
-        if p < 0.01:  return "**"
-        if p < 0.05:  return "*"
-        if p < 0.10:  return "."
-        return ""
 
     coef_df = pd.DataFrame({
         "Coefficient": lm6.params.round(4),
         "Std error":   lm6.bse.round(4),
         "t-stat":      lm6.tvalues.round(3),
         "p-value":     lm6.pvalues.apply(lambda p: f"{p:.3e}"),
-        "Signif":      lm6.pvalues.apply(sig_stars),
     })
     st.dataframe(coef_df, use_container_width=True)
-    st.caption("Signif. codes: '***' p < 0.001  '**' p < 0.01  '*' p < 0.05  '.' p < 0.10")
 
     # --- Prominent p-value metrics -----------------
     st.markdown("### Key p-values at a glance")
